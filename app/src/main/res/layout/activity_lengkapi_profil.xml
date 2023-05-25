@@ -68,7 +68,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/nameEditTextLayout" />
 
-
         <DatePicker
             android:id="@+id/birthDate"
             android:layout_width="match_parent"

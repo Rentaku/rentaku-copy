@@ -2,6 +2,7 @@ package com.example.rentakucapstone.view.profile
 
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
+import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -25,6 +26,9 @@ class ContToProfileActivity : AppCompatActivity() {
         playAnimation()
     }
     fun onNextClick(view: View) {
+        binding.nextTextView.setOnClickListener {
+            startActivity(Intent(this, LengkapiProfilActivity::class.java))
+        }
         Toast.makeText(this, "Okayyy", Toast.LENGTH_SHORT).show()
     }
 
