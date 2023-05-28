@@ -1,0 +1,72 @@
+<resources>
+    <string name="app_name">RentakuCapstone</string>
+    <string name="message_main_page">Selamat Datang Di Rentaku.</string>
+    <string name="rentaku">RENTAKU</string>
+    <string name="sewa_text">SEWA TRANSPORTASI</string>
+    <string name="title">Masukkan email dan password untuk melanjutkan</string>
+    <string name="email">E-mail</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Lupa sandi?</string>
+    <string name="belum">Belum punya akun? </string>
+    <string name="login">Masuk</string>
+    <string name="atau">atau</string>
+    <string name="google">Masuk dengan Google</string>
+
+    <string name="title_signup_page">Lengkapi data dirimu di bawah ini ya</string>
+    <string name="name">Nama</string>
+    <string name="signup">Daftar</string>
+    <string name="logout">Keluar</string>
+    <string name="greeting">Halo %1$s,</string>
+    <string name="title_welcome_page">Selamat datang di Rentaku!</string>
+    <string name="message_welcome_page">Mau belajar Android, iOS, Machine Learning, Cloud, Front-End, Back-End, dan bidang IT lainnya? Di Dicodingin aja!</string>
+    <string name="input_email">Masukan Email Anda</string>
+    <string name="input_password">Masukkan Password Anda</string>
+    <string name="registrasi">Registrasi disini.</string>
+    <string name="kamu_lupa_sandi">Kamu Lupa Password ya…</string>
+    <string name="gimana">Masukkin aja email kamu disini terus pencet "Reset Password Saya"</string>
+    <string name="reset_password_saya">Reset Password Saya</string>
+    <string name="punya_akun">Punya akun?</string>
+    <string name="masuk">Masuk</string>
+    <string name="buat_kata_sandi">Buat Kata Sandi</string>
+    <string name="different_password">Password baru kamu harus beda dari yang sebelumnya ya...</string>
+    <string name="new_password">Kata Sandi Baru</string>
+    <string name="confirm_new_password">Konfirmasi Password Baru</string>
+    <string name="instruction_email">Silakan cek email kamu untuk lihat instruksi lebih lanjut.</string>
+    <string name="minimum_karakter">Minimal 8 Karakter</string>
+    <string name="confirm_karakter">Keduanya harus cocok ya</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_home">Beranda</string>
+    <string name="title_pesanan">Pesanan</string>
+    <string name="title_fav">Favourite</string>
+    <string name="dashboard">INI HALAMAN DASHBOARD</string>
+    <string name="title_activity_dashboard">DashboardActivity</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="account">This is account fragment</string>
+    <string name="title_account">Akun</string>
+    <string name="this_is_home_fragment">This is Home Fragment</string>
+    <string name="this_is_dashboard_fragment">This is Dashboard Fragment</string>
+    <string name="this_is_notifications_fragment">This is Notifications Fragment</string>
+
+    <string name="register">Buat akunmu dan nikmati sewa kendaraan di sekitarmu dengan mudah!</string>
+    <string name="hint_nama">Nama kamu</string>
+    <string name="hint_email">rentaku@gmail.com</string>
+    <string name="gender">Jenis Kelamin</string>
+    <string name="gender_hint">Laki-laki/Perempuan</string>
+    <string name="telepon">Telepon</string>
+    <string name="number_hint">0877428482</string>
+    <string name="lanjut">Lanjut</string>
+    <string name="lengkapiProfil">Lengkapi profil kamu dulu yuk!</string>
+    <string name="profil">Profil</string>
+    <string name="tglLahir">Tanggal Lahir</string>
+    <string name="noKtp_hint">029103218372819334</string>
+    <string name="nomor_ktp">Nomor KTP</string>
+    <string name="gallery">Gallery</string>
+    <string name="camera">Camera</string>
+    <string name="simpan">Simpan</string>
+
+    <string name="menu_1">Menu 1</string>
+    <string name="searchbar_hint">Input Text Bro</string>
+    <string name="mau_kemana_kamu_hari_ini">Mau kemana kamu hari ini?</string>
+
+</resources>
