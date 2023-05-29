@@ -134,6 +134,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/numberTextView">
 
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/noKtpEditText"
                 android:layout_width="match_parent"
@@ -148,10 +149,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginTop="16dp"
-            android:text="@string/nomor_sim"
-            android:textColor="@color/black"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/birthDate" />
+            android:text="@string/nomor_sim"/>
+
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/noSimEditTextLayout"
@@ -163,6 +162,7 @@
             android:hint="@string/noKtp_hint"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+
             app:layout_constraintTop_toBottomOf="@+id/numberTextView">
 
             <com.google.android.material.textfield.TextInputEditText

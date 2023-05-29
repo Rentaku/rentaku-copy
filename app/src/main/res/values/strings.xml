@@ -64,6 +64,7 @@
     <string name="gallery">Gallery</string>
     <string name="camera">Camera</string>
     <string name="simpan">Simpan</string>
+<<<<<<< HEAD
     <string name="agreement">melalui centang check box ini akan digunakan untuk memvalidasi data yang diberikan dan setuju terhadap ketentuan yang ada</string>
     <string name="nomor_sim">Nomor SIM</string>
     <string name="nomor_paspor">Nomor Paspor</string>
@@ -71,5 +72,11 @@
     <string name="alamat">Alamat</string>
     <string name="deskripsi">Deskripsi</string>
     <string name="nama_pemilik">Nama Pemilik</string>
+=======
+
+    <string name="menu_1">Menu 1</string>
+    <string name="searchbar_hint">Input Text Bro</string>
+    <string name="mau_kemana_kamu_hari_ini">Mau kemana kamu hari ini?</string>
+>>>>>>> 32a93d05e359b3defa77f303ecedb5ac41d75d46
 
 </resources>
