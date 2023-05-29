@@ -22,10 +22,19 @@
         android:theme="@style/Theme.RentakuCapstone"
         tools:targetApi="31">
         <activity
-            android:name=".LengkapiProfilActivity2"
+            android:name=".view.profile.TambahKendaraanActivity"
             android:exported="false" />
         <activity
-            android:name=".CameraActivity"
+            android:name=".view.profile.ListKendaraanRenterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.profile.TambahGarasiActivity"
+            android:exported="true" />
+        <activity
+            android:name=".view.profile.LengkapiProfilActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".view.profile.CameraActivity"
             android:exported="false" />
 
         <provider

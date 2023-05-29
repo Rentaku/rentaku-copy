@@ -64,5 +64,12 @@
     <string name="gallery">Gallery</string>
     <string name="camera">Camera</string>
     <string name="simpan">Simpan</string>
+    <string name="agreement">melalui centang check box ini akan digunakan untuk memvalidasi data yang diberikan dan setuju terhadap ketentuan yang ada</string>
+    <string name="nomor_sim">Nomor SIM</string>
+    <string name="nomor_paspor">Nomor Paspor</string>
+    <string name="nama_garasi">Nama Garasi</string>
+    <string name="alamat">Alamat</string>
+    <string name="deskripsi">Deskripsi</string>
+    <string name="nama_pemilik">Nama Pemilik</string>
 
 </resources>
