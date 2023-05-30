@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">RentakuCapstone</string>
+    <string name="bar_name">Selamat Datang Di Rentaku</string>
     <string name="message_main_page">Selamat Datang Di Rentaku.</string>
     <string name="rentaku">RENTAKU</string>
     <string name="sewa_text">SEWA TRANSPORTASI</string>
@@ -75,8 +76,10 @@
 
 
     <string name="menu_1">Menu 1</string>
-    <string name="searchbar_hint">Input Text Bro</string>
-    <string name="mau_kemana_kamu_hari_ini">Mau kemana kamu hari ini?</string>
+    <string name="searchbar_hint">Mau kemana kamu hari ini?</string>
+    <string name="wilayah_merk">wilayah, merk kendaraan</string>
+    <string name="rekomendasi">Rekomendasi</string>
+    <string name="motor">ZX 250R</string>
 
 
 </resources>
