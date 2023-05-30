@@ -50,9 +50,12 @@
                 android:id="@+id/nameGarasiEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:contentDescription="@string/test1"
                 android:ems="10"
+                android:hint="@string/e_g_5"
                 android:inputType="text"
-                app:passwordToggleEnabled="true" />
+                app:passwordToggleEnabled="true"
+                tools:ignore="ContentDescription,EditableContentDescCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
@@ -83,7 +86,8 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="text"
-                app:passwordToggleEnabled="true" />
+                app:passwordToggleEnabled="true"
+                tools:ignore="SpeakableTextPresentCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
@@ -114,7 +118,8 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="text"
-                app:passwordToggleEnabled="true" />
+                app:passwordToggleEnabled="true"
+                tools:ignore="SpeakableTextPresentCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
@@ -145,7 +150,8 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="text"
-                app:passwordToggleEnabled="true" />
+                app:passwordToggleEnabled="true"
+                tools:ignore="SpeakableTextPresentCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
@@ -176,7 +182,8 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="text"
-                app:passwordToggleEnabled="true" />
+                app:passwordToggleEnabled="true"
+                tools:ignore="SpeakableTextPresentCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
@@ -190,11 +197,12 @@
             android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
             android:onClick="onNextClick"
             android:text="Simpan dan Lanjutkan"
-            android:textStyle="bold"
             android:textColor="@color/blue4"
             android:textSize="16sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="TouchTargetSizeCheck" />
 
     </LinearLayout>
 

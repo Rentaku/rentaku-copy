@@ -17,12 +17,12 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profile_image"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
             android:scaleType="centerCrop"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="30dp"
-            android:src="@drawable/baseline_account_circle_24" />
+            tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
             android:id="@+id/nameTextView"
@@ -132,8 +132,8 @@
             android:hint="@string/noKtp_hint"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/numberTextView">
-
+            app:layout_constraintTop_toBottomOf="@+id/numberTextView"
+            app:startIconDrawable="@drawable/ic_baseline_local_phone_24">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/noKtpEditText"
@@ -149,8 +149,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginTop="16dp"
-            android:text="@string/nomor_sim"/>
-
+            android:text="@string/nomor_ktp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/birthDate" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/noSimEditTextLayout"
@@ -162,8 +164,8 @@
             android:hint="@string/noKtp_hint"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-
-            app:layout_constraintTop_toBottomOf="@+id/numberTextView">
+            app:layout_constraintTop_toBottomOf="@+id/numberTextView"
+            app:startIconDrawable="@drawable/ic_baseline_local_phone_24">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/noSimEditText"
@@ -172,53 +174,6 @@
                 android:ems="10"
                 android:inputType="number" />
         </com.google.android.material.textfield.TextInputLayout>
-
-        <TextView
-            android:id="@+id/noPasporTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="16dp"
-            android:text="@string/nomor_paspor"
-            android:textColor="@color/black"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/birthDate" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/noPasporEditTextLayout"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            android:hint="@string/noKtp_hint"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/numberTextView">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/noPasporEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="number" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <TextView
-            android:id="@+id/nextTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="200dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="32dp"
-            android:clickable="true"
-            android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
-            android:onClick="onNextClick"
-            android:text="Simpan dan Lanjutkan"
-            android:textColor="@color/blue4"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
 
     </LinearLayout>
 

@@ -65,7 +65,6 @@
     <string name="gallery">Gallery</string>
     <string name="camera">Camera</string>
     <string name="simpan">Simpan</string>
-
     <string name="agreement">melalui centang check box ini akan digunakan untuk memvalidasi data yang diberikan dan setuju terhadap ketentuan yang ada</string>
     <string name="nomor_sim">Nomor SIM</string>
     <string name="nomor_paspor">Nomor Paspor</string>
@@ -73,13 +72,12 @@
     <string name="alamat">Alamat</string>
     <string name="deskripsi">Deskripsi</string>
     <string name="nama_pemilik">Nama Pemilik</string>
-
-
     <string name="menu_1">Menu 1</string>
     <string name="searchbar_hint">Mau kemana kamu hari ini?</string>
     <string name="wilayah_merk">wilayah, merk kendaraan</string>
     <string name="rekomendasi">Rekomendasi</string>
     <string name="motor">ZX 250R</string>
-
+    <string name="test1">Enter How Much Cookies You Want</string>
+    <string name="e_g_5">e.g 5</string>
 
 </resources>
