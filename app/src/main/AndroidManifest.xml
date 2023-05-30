@@ -22,7 +22,6 @@
         android:theme="@style/Theme.RentakuCapstone"
         tools:targetApi="31">
         <activity
-<<<<<<< HEAD
             android:name=".view.profile.TambahKendaraanActivity"
             android:exported="false" />
         <activity
@@ -35,14 +34,8 @@
             android:name=".view.profile.LengkapiProfilActivity2"
             android:exported="false" />
         <activity
-            android:name=".view.profile.CameraActivity"
-=======
-            android:name=".LengkapiProfilActivity2"
-            android:exported="false" />
-        <activity
-            android:name=".CameraActivity"
->>>>>>> 32a93d05e359b3defa77f303ecedb5ac41d75d46
-            android:exported="false" />
+            android:name=".view.profile.CameraActivity"/>
+
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -78,7 +71,7 @@
             android:exported="false" />
         <activity
             android:name=".view.login.LoginActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".view.welcome.WelcomeActivity"
             android:exported="false" />

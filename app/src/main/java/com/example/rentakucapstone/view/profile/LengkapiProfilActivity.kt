@@ -1,6 +1,5 @@
 package com.example.rentakucapstone.view.profile
 
-<<<<<<< HEAD
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -24,16 +23,5 @@ class LengkapiProfilActivity : AppCompatActivity() {
             startActivity(Intent(this, LengkapiProfilActivity2::class.java))
             Toast.makeText(this, "Data berhasil Disimpan", Toast.LENGTH_SHORT).show()
         }
-
-=======
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import com.example.rentakucapstone.R
-
-class LengkapiProfilActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_lengkapi_profil)
->>>>>>> 32a93d05e359b3defa77f303ecedb5ac41d75d46
     }
 }

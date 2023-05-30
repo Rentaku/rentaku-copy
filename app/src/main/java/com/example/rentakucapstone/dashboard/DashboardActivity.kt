@@ -22,7 +22,7 @@ class DashboardActivity : AppCompatActivity() {
 
         val navView: BottomNavigationView = binding.navView
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
         val navController = findNavController(R.id.nav_host_fragment_activity_dashboard)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
@@ -33,17 +33,17 @@ class DashboardActivity : AppCompatActivity() {
         )
         // setupActionBarWithNavController(navController, appBarConfiguration)
         // navView.setupWithNavController(navController)
-=======
+//=======
         //val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_activity_dashboard)
        // val navController = navHostFragment.navController
-        val navController = findNavController(R.id.nav_host_fragment_activity_dashboard)
+//        val navController = findNavController(R.id.nav_host_fragment_activity_dashboard)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-        val appBarConfiguration = AppBarConfiguration.Builder(
-            R.id.navigation_home, R.id.navigation_favourite, R.id.navigation_pesanan, R.id.navigation_account
-        ).build()
+//        val appBarConfiguration = AppBarConfiguration.Builder(
+//            R.id.navigation_home, R.id.navigation_favourite, R.id.navigation_pesanan, R.id.navigation_account
+//        ).build()
          // setupActionBarWithNavController(navController, appBarConfiguration)
-         navView.setupWithNavController(navController)
->>>>>>> 32a93d05e359b3defa77f303ecedb5ac41d75d46
+//         navView.setupWithNavController(navController)
+//>>>>>>> 32a93d05e359b3defa77f303ecedb5ac41d75d46
     }
 }
