@@ -29,7 +29,7 @@
     <string name="punya_akun">Punya akun?</string>
     <string name="masuk">Masuk</string>
     <string name="buat_kata_sandi">Buat Kata Sandi</string>
-    <string name="different_password">Password baru kamu harus beda dari yang sebelumnya ya...</string>
+    <string name="different_password">Password baru kamu harus beda dari yang sebelumnya ya…</string>
     <string name="new_password">Kata Sandi Baru</string>
     <string name="confirm_new_password">Konfirmasi Password Baru</string>
     <string name="instruction_email">Silakan cek email kamu untuk lihat instruksi lebih lanjut.</string>
@@ -71,5 +71,6 @@
     <string name="wilayah_merk">wilayah, merk kendaraan</string>
     <string name="rekomendasi">Rekomendasi</string>
     <string name="motor">ZX 250R</string>
+    <string name="test_aja_yee">TEST</string>
 
 </resources>
