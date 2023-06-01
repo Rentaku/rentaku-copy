@@ -15,8 +15,10 @@ import com.example.rentakucapstone.databinding.FragmentHomeBinding
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
-    private lateinit var adapter : RekomendasiAdapter
-    private val names = listOf("ZX 250R", "ZX 250R", "ZX 250R", "ZX 250R")
+    private lateinit var rekomendasiAdapter : RekomendasiAdapter
+    private lateinit var disekitarAdapter : DisekitarAdapter
+    private val rekomendasiNames = listOf("ZX 250R", "ZX 250R", "ZX 250R", "ZX 250R")
+    private val disekitarNames = listOf("ZX 250R", "ZX 250R", "ZX 250R", "ZX 250R")
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -37,20 +39,33 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        adapter = RekomendasiAdapter(names)
+        rekomendasiAdapter = RekomendasiAdapter(rekomendasiNames)
+        disekitarAdapter = DisekitarAdapter(disekitarNames)
 
         var recyclerView: RecyclerView
         binding.rvRekomendasi.layoutManager = LinearLayoutManager(requireActivity())
         binding.rvRekomendasi.setHasFixedSize(true)
-        binding.rvRekomendasi.adapter = adapter
+        binding.rvRekomendasi.adapter = rekomendasiAdapter
 
-        val horizontalLayout = LinearLayoutManager(
+        binding.rvDisekitarmu.layoutManager = LinearLayoutManager(requireActivity())
+        binding.rvDisekitarmu.setHasFixedSize(true)
+        binding.rvDisekitarmu.adapter = disekitarAdapter
+
+        val horizontalLayoutRekomendasi = LinearLayoutManager(
             requireActivity(),
             LinearLayoutManager.HORIZONTAL,
             false
         )
-        binding.rvRekomendasi.layoutManager = horizontalLayout
+        binding.rvRekomendasi.layoutManager = horizontalLayoutRekomendasi
         binding.rvRekomendasi.layoutManager
+
+        val horizontalLayoutDisekitar = LinearLayoutManager(
+            requireActivity(),
+            LinearLayoutManager.HORIZONTAL,
+            false
+        )
+        binding.rvDisekitarmu.layoutManager = horizontalLayoutDisekitar
+        binding.rvDisekitarmu.layoutManager
 
         val homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
 
