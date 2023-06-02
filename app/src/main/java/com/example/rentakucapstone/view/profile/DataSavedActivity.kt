@@ -1,32 +1,27 @@
 package com.example.rentakucapstone.view.profile
 
-import android.animation.AnimatorSet
-import android.animation.ObjectAnimator
 import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
-import android.widget.Toast
 import com.example.rentakucapstone.R
 import com.example.rentakucapstone.dashboard.DashboardActivity
-import com.example.rentakucapstone.databinding.ActivityLengkapiProfil2Binding
-import com.example.rentakucapstone.view.register.RegisterActivity
-import com.example.rentakucapstone.view.welcome.ForgotPasswordActivity
+import com.example.rentakucapstone.dashboard.ui.home.HomeFragment
+import com.example.rentakucapstone.databinding.ActivityDataSavedBinding
 
-class LengkapiProfilActivity2 : AppCompatActivity() {
+class DataSavedActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityLengkapiProfil2Binding
+    private lateinit var binding: ActivityDataSavedBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityLengkapiProfil2Binding.inflate(layoutInflater)
+        binding = ActivityDataSavedBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         setupView()
         setupAction()
-
     }
 
     private fun setupView() {
@@ -43,8 +38,8 @@ class LengkapiProfilActivity2 : AppCompatActivity() {
     }
 
     private fun setupAction() {
-        binding.simpan.setOnClickListener {
-            startActivity(Intent(this, DataSavedActivity::class.java))
+        binding.lanjutButton.setOnClickListener {
+            startActivity(Intent(this, DashboardActivity::class.java))
         }
     }
 }
