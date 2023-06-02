@@ -84,4 +84,25 @@
     <string name="cc_250">250cc</string>
     <string name="harga1">250K/hari</string>
     <string name="lihat_semua">Lihat Semua</string>
+
+    <string name="nomor_sim">Nomor SIM</string>
+    <string name="nomor_paspor">Nomor Paspor</string>
+    <string name="agreement">melalui centang check box ini akan digunakan untuk memvalidasi data yang diberikan dan setuju terhadap ketentuan yang ada</string>
+    <string name="detail_kendaraan_title">Detail Kendaraan</string>
+    <string name="merk">Merk</string>
+    <string name="model">Model</string>
+    <string name="kategori">Kategori</string>
+    <string name="mileage">Mileage</string>
+    <string name="tipe_transmisi">Tipe Transmisi</string>
+    <string name="jumlah_penumpang">Jumlah Penumpang</string>
+    <string name="warna">Warna</string>
+    <string name="harga">Harga</string>
+    <string name="nama_garasi">Nama Garasi</string>
+    <string name="alamat">Alamat</string>
+    <string name="deskripsi">Deskripsi</string>
+    <string name="nama_pemilik">Nama Pemilik</string>
+    <string name="tanggal">Tanggal</string>
+    <string name="no_pesanan">No. Pesanan</string>
+    <string name="smj00233">SMJ00233</string>
+    <string name="total_pembayaran">Total Pembayaran</string>
 </resources>
