@@ -6,6 +6,7 @@ import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Patterns
 import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
@@ -14,17 +15,22 @@ import android.widget.AutoCompleteTextView
 import android.widget.Toast
 import com.example.rentakucapstone.R
 import com.example.rentakucapstone.databinding.ActivityRegisterBinding
+import com.example.rentakucapstone.view.login.LoginActivity
 import com.example.rentakucapstone.view.profile.ContToProfileActivity
+import com.google.firebase.auth.FirebaseAuth
 
 class RegisterActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRegisterBinding
     private lateinit var gender: AutoCompleteTextView
     private lateinit var adapter: ArrayAdapter<String>
+    lateinit var auth : FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        auth = FirebaseAuth.getInstance()
 
         val genderOption = arrayOf("Laki-laki", "Perempuan")
         gender = findViewById(R.id.spinner_gender)
@@ -32,14 +38,70 @@ class RegisterActivity : AppCompatActivity() {
         gender.setAdapter(adapter)
 
         binding.signupButton.setOnClickListener {
-            val intent = Intent(this, ContToProfileActivity::class.java)
-            Toast.makeText(this, "Akun berhasil dibuat!", Toast.LENGTH_SHORT).show()
-            startActivity(intent)
+            val email = binding.emailEditText.text.toString()
+            val password = binding.passwordEditText.text.toString()
+            val name = binding.nameEditText.text.toString()
+            val phoneNumber = binding.numberEditText.text.toString()
+//            val selectedGender = binding.spinnerGender.text.toString()
+//            if (name.isEmpty() || phoneNumber.isEmpty() || email.isEmpty() || password.isEmpty()) {
+//                Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
+//                return@setOnClickListener
+//            }
+
+            if (email.isEmpty()) {
+                binding.emailEditText.error = "Email harus diisi"
+                binding.emailEditText.requestFocus()
+                return@setOnClickListener
+            }
+
+            if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                binding.emailEditText.error = "Email tidak valid"
+                binding.emailEditText.requestFocus()
+                return@setOnClickListener
+            }
+
+            if (password.isEmpty()) {
+                binding.passwordEditText.error = "Password harus diisi"
+                binding.passwordEditText.requestFocus()
+                return@setOnClickListener
+            }
+
+            if (password.length > 6) {
+                binding.passwordEditText.error = "Password minimal 6 karakter"
+                binding.passwordEditText.requestFocus()
+                return@setOnClickListener
+            }
+
+            registerFirebase(email, password)
+//            val intent = Intent(this, ContToProfileActivity::class.java)
+//            Toast.makeText(this, "Akun berhasil dibuat!", Toast.LENGTH_SHORT).show()
+//            startActivity(intent)
         }
 
         setupView()
         playAnimation()
     }
+
+    private fun registerFirebase(email: String, password: String) {
+        auth.createUserWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this) {
+                if (it.isSuccessful) {
+//                    val user = FirebaseAuth.getInstance().currentUser
+//                    if (user != null) {
+//                        val userData = hashMapOf(
+//                            "name" to name,
+//                            "phoneNumber" to phoneNumber
+//                        )
+//                    }
+                    Toast.makeText(this, "Akun berhasil dibuat!", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this, LoginActivity::class.java)
+                    startActivity(intent)
+                }else{
+                    Toast.makeText(this, "${it.exception?.message}", Toast.LENGTH_SHORT).show()
+                }
+            }
+    }
+
     private fun setupView() {
         @Suppress("DEPRECATION")
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
