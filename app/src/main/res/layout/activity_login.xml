@@ -137,11 +137,12 @@
 
     <TextView
         android:id="@+id/textOr"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/atau"
         android:textColor="@color/black"
         android:textSize="14sp"
+        android:gravity="center_horizontal"
         app:layout_constraintBottom_toTopOf="@+id/loginWithGoogle"
         app:layout_constraintTop_toBottomOf="@+id/loginButton"
         tools:layout_editor_absoluteX="192dp"
@@ -158,10 +159,22 @@
         android:text="@string/google"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textOr"
         app:startIconDrawable="@drawable/google"
         android:textColor="@color/black"
         android:textSize="14sp"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteY="460dp" />
+
+<!--    <TextView-->
+<!--        android:id="@+id/text_btn_resgistrasi"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/registrasi"-->
+<!--        android:layout_marginTop="45dp"-->
+<!--        android:clickable="true"-->
+<!--        android:onClick="onNextClick"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/loginWithGoogle"-->
+<!--        android:gravity="center_horizontal"/>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
