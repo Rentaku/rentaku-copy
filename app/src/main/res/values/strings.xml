@@ -180,4 +180,12 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
+    <string name="kawasaki_zx250r">Kawasaki ZX250R</string>
+    <string name="location_rental">Rental Lempuyangan</string>
+    <string name="fitur">Fitur</string>
+    <string name="by">Disediakan oleh</string>
+    <string name="renter">Sewa Motor Lempuyangan</string>
+    <string name="_4_0">4.0</string>
+    <string name="ulasan">150 ulasan</string>
+    <string name="lihat_ulasan">Lihat ulasan</string>
 </resources>
