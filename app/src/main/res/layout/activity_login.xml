@@ -101,6 +101,7 @@
         android:alpha="0"
         android:backgroundTint="@color/blue"
         android:text="@string/login"
+        android:onClick="onNextClick"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordEditTextLayout" />

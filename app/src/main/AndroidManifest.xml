@@ -23,6 +23,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RentakuCapstone"
         tools:targetApi="31">
+
+        <meta-data
+            android:name="com.google.firebase.appcheck.provider"
+            android:value="firebase" />
         <activity
             android:name=".dashboard.ui.home.DetailActivity"
             android:exported="false" />
