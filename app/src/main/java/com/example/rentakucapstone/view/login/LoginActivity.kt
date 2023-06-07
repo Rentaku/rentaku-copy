@@ -17,11 +17,14 @@ import com.example.rentakucapstone.view.profile.ContToProfileActivity
 import com.example.rentakucapstone.view.profile.LengkapiProfilActivity2
 import com.example.rentakucapstone.view.register.RegisterActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class LoginActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityLoginBinding
     lateinit var auth : FirebaseAuth
+    private var db = Firebase.firestore
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
@@ -50,9 +53,37 @@ class LoginActivity : AppCompatActivity() {
                 binding.passwordEditText.error = "Password harus diisi"
                 binding.passwordEditText.requestFocus()
                 return@setOnClickListener
+            } else {
+                db.collection("users")
+                    .get()
+                    .addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            val sEmail = email
+                            val sPassword = password
+                            var isLogin = false
+                            for (doc in task.result) {
+                                val a = doc.getString("email")
+                                val b = doc.getString("password")
+                                if (a.equals(sEmail, ignoreCase = true) && b.equals(sPassword, ignoreCase = true)) {
+                                    Toast.makeText(this, "Selamat datang $email", Toast.LENGTH_SHORT).show()
+                                    val intent = Intent(this, ContToProfileActivity::class.java)
+                                    startActivity(intent)
+                                    isLogin = true
+                                    break
+                                }
+                            }
+                            if (!isLogin) {
+                                Toast.makeText(
+                                    this,
+                                    "Cannot login, incorrect Email and Password",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
+                        }
+                    }
             }
 
-            loginFirebase(email, password)
+//            loginFirebase(email, password)
         }
 
         setupView()
