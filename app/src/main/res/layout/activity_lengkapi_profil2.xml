@@ -18,7 +18,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="KTP"
+                android:text="@string/ktp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"/>
 
@@ -57,7 +57,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="KTP"
+                android:text="@string/ktp_dan_muka"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"/>
 
@@ -96,7 +96,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="KTP"
+                android:text="@string/sim_a"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"/>
 
@@ -135,7 +135,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="KTP"
+                android:text="@string/sim_c"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"/>
 
@@ -174,7 +174,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="KTP"
+                android:text="@string/paspor"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"/>
 
