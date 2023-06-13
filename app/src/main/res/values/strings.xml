@@ -195,4 +195,12 @@
     <string name="sim_a">SIM A</string>
     <string name="sim_c">SIM C</string>
     <string name="paspor">Paspor</string>
+    <string name="fav">Favourite</string>
+    <string name="pesanan">Pesanan</string>
+    <string name="senayan_park">Senayan Park</string>
+    <string name="alamat_dummy">Jl.GBK Senayan City</string>
+    <string name="sedang_diantar">Sedang diantar</string>
+    <string name="time">12:10</string>
+    <string name="price">Rp.250.000</string>
+    <string name="pesan_lagi">Pesan Lagi</string>
 </resources>
