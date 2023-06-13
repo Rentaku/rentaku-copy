@@ -16,8 +16,9 @@ import android.widget.Toast
 import com.example.rentakucapstone.R
 import com.example.rentakucapstone.databinding.ActivityRegisterBinding
 import com.example.rentakucapstone.view.login.LoginActivity
-import com.example.rentakucapstone.view.profile.ContToProfileActivity
+import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
@@ -25,6 +26,7 @@ class RegisterActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRegisterBinding
     private lateinit var gender: AutoCompleteTextView
     private lateinit var adapter: ArrayAdapter<String>
+    private lateinit var auth: FirebaseAuth
     private var db = Firebase.firestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,65 +43,73 @@ class RegisterActivity : AppCompatActivity() {
         binding.signupButton.setOnClickListener {
             val email = binding.emailEditText.text.toString()
             val password = binding.passwordEditText.text.toString()
-            val name = binding.nameEditText.text.toString()
-            val phoneNumber = binding.numberEditText.text.toString()
-            val selectedGender = gender.text.toString()
 
             if (email.isEmpty()) {
                 binding.emailEditText.error = "Email harus diisi"
                 binding.emailEditText.requestFocus()
                 return@setOnClickListener
-            }
-
-            if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
                 binding.emailEditText.error = "Email tidak valid"
                 binding.emailEditText.requestFocus()
                 return@setOnClickListener
-            }
-
-            if (password.isEmpty()) {
+            } else if (password.isEmpty()) {
                 binding.passwordEditText.error = "Password harus diisi"
                 binding.passwordEditText.requestFocus()
                 return@setOnClickListener
-            }
-
-            if (password.length > 6) {
+            } else if (password.length < 6) {
                 binding.passwordEditText.error = "Password minimal 6 karakter"
                 binding.passwordEditText.requestFocus()
                 return@setOnClickListener
+            } else {
+                registerUser(email, password)
             }
-
-            val userMap = hashMapOf(
-                "name" to name,
-                "phone_number" to phoneNumber,
-                "gender" to selectedGender,
-                "email" to email,
-                "password" to password
-            )
-
-            val userId = FirebaseAuth.getInstance().currentUser!!.uid
-
-            db.collection("users").document(userId).set(userMap)
-                .addOnSuccessListener {
-                    Toast.makeText(this, "Akun berhasil dibuat!!!", Toast.LENGTH_SHORT).show()
-                    binding.nameEditText.text?.clear()
-                    binding.numberEditText.text?.clear()
-                    binding.spinnerGender.text?.clear()
-                    binding.emailEditText.text?.clear()
-                    binding.passwordEditText.text?.clear()
-
-                    val intent = Intent(this, LoginActivity::class.java)
-                    startActivity(intent)
-                }
-                .addOnFailureListener {
-                    Toast.makeText(this, "Akun gagal dibuat! -_-''", Toast.LENGTH_SHORT).show()
-                }
 
         }
 
         setupView()
         playAnimation()
+
     }
+
+    private fun registerUser(email: String, password: String) {
+        auth = FirebaseAuth.getInstance()
+        db = FirebaseFirestore.getInstance()
+        val userId = auth.currentUser!!.uid
+
+        val name = binding.nameEditText.text.toString()
+        val phoneNumber = binding.numberEditText.text.toString()
+        val selectedGender = gender.text.toString()
+
+        auth.createUserWithEmailAndPassword(email, password)
+            .addOnSuccessListener {
+                val userMap = hashMapOf(
+                    "name" to name,
+                    "phone_number" to phoneNumber,
+                    "gender" to selectedGender,
+                    "email" to email,
+                    "password" to password
+                )
+
+                if (userId != null) {
+                    db.collection("users").document(userId).set(userMap)
+                        .addOnSuccessListener {
+                            Toast.makeText(this, "Akun berhasil dibuat!!!", Toast.LENGTH_SHORT).show()
+                            binding.nameEditText.text?.clear()
+                            binding.numberEditText.text?.clear()
+                            binding.spinnerGender.text?.clear()
+                            binding.emailEditText.text?.clear()
+                            binding.passwordEditText.text?.clear()
+
+                            val intent = Intent(this, LoginActivity::class.java)
+                            startActivity(intent)
+                        }
+                        .addOnFailureListener {
+                            Toast.makeText(this, "Akun gagal dibuat! -_-''", Toast.LENGTH_SHORT).show()
+                        }
+                }
+            }
+    }
+
 
     private fun setupView() {
         @Suppress("DEPRECATION")

@@ -16,6 +16,7 @@ import com.example.rentakucapstone.databinding.ActivityContToProfileBinding
 class ContToProfileActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityContToProfileBinding
+    private lateinit var name: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,14 +25,18 @@ class ContToProfileActivity : AppCompatActivity() {
 
         setupView()
         playAnimation()
-    }
-    fun onNextClick(view: View) {
-        binding.nextTextView.setOnClickListener {
-            startActivity(Intent(this, LengkapiProfilActivity::class.java))
-        }
-        Toast.makeText(this, "Okayyy", Toast.LENGTH_SHORT).show()
-    }
 
+        name = intent.getStringExtra("name") ?: ""
+
+        binding.nextTextView.setOnClickListener {
+            val intent = Intent(this, LengkapiProfilActivity::class.java)
+            intent.putExtra("name", name)
+            startActivity(intent)
+            Toast.makeText(this, name, Toast.LENGTH_SHORT).show()
+            // Selesaikan aktivitas penghubung
+            finish()
+        }
+    }
     private fun playAnimation() {
 
         val title = ObjectAnimator.ofFloat(binding.titleTextView, View.ALPHA, 1f).setDuration(500)

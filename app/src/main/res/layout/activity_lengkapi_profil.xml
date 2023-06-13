@@ -15,6 +15,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <TextView
+            android:id="@+id/welcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="35dp"
+            android:text="@string/welcome"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profile_image" />
+
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profile_image"
             android:layout_width="150dp"
@@ -25,31 +38,30 @@
             android:src="@drawable/baseline_account_circle_24" />
 
         <TextView
-            android:id="@+id/nameTextView"
+            android:id="@+id/alamatTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginTop="35dp"
-            android:text="@string/name"
+            android:text="@string/alamat"
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/profile_image" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/nameEditTextLayout"
+            android:id="@+id/alamatEditTextLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
-            android:hint="@string/hint_nama"
+            android:hint="@string/jl_sudirman"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/nameTextView"
-            app:startIconDrawable="@drawable/ic_baseline_person_24">
+            app:layout_constraintTop_toBottomOf="@+id/nameTextView">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/nameEditText"
+                android:id="@+id/alamatEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -100,8 +112,7 @@
             android:hint="@string/number_hint"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/numberTextView"
-            app:startIconDrawable="@drawable/ic_baseline_local_phone_24">
+            app:layout_constraintTop_toBottomOf="@+id/numberTextView">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/numberEditText"

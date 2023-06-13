@@ -188,4 +188,11 @@
     <string name="_4_0">4.0</string>
     <string name="ulasan">150 ulasan</string>
     <string name="lihat_ulasan">Lihat ulasan</string>
+    <string name="jl_sudirman">Jl. Sudirman</string>
+    <string name="welcome">Welcome %s !!</string>
+    <string name="ktp">KTP</string>
+    <string name="ktp_dan_muka">KTP dan muka</string>
+    <string name="sim_a">SIM A</string>
+    <string name="sim_c">SIM C</string>
+    <string name="paspor">Paspor</string>
 </resources>

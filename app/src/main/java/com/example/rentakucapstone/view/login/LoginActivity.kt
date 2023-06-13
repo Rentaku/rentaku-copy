@@ -2,10 +2,12 @@ package com.example.rentakucapstone.view.login
 
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
+import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.util.Patterns
 import android.view.View
 import android.view.WindowInsets
@@ -17,6 +19,7 @@ import com.example.rentakucapstone.view.profile.ContToProfileActivity
 import com.example.rentakucapstone.view.profile.LengkapiProfilActivity2
 import com.example.rentakucapstone.view.register.RegisterActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
@@ -54,36 +57,37 @@ class LoginActivity : AppCompatActivity() {
                 binding.passwordEditText.requestFocus()
                 return@setOnClickListener
             } else {
-                db.collection("users")
-                    .get()
-                    .addOnCompleteListener { task ->
-                        if (task.isSuccessful) {
-                            val sEmail = email
-                            val sPassword = password
-                            var isLogin = false
-                            for (doc in task.result) {
-                                val a = doc.getString("email")
-                                val b = doc.getString("password")
-                                if (a.equals(sEmail, ignoreCase = true) && b.equals(sPassword, ignoreCase = true)) {
-                                    Toast.makeText(this, "Selamat datang $email", Toast.LENGTH_SHORT).show()
-                                    val intent = Intent(this, ContToProfileActivity::class.java)
-                                    startActivity(intent)
-                                    isLogin = true
-                                    break
-                                }
-                            }
-                            if (!isLogin) {
-                                Toast.makeText(
-                                    this,
-                                    "Cannot login, incorrect Email and Password",
-                                    Toast.LENGTH_SHORT
-                                ).show()
-                            }
-                        }
-                    }
+//                db.collection("users")
+//                    .get()
+//                    .addOnCompleteListener { task ->
+//                        if (task.isSuccessful) {
+//                            val sEmail = email
+//                            val sPassword = password
+//                            var isLogin = false
+//                            for (doc in task.result) {
+//                                val a = doc.getString("email")
+//                                val b = doc.getString("password")
+//                                if (a.equals(sEmail, ignoreCase = true) && b.equals(sPassword, ignoreCase = true)) {
+//                                    Toast.makeText(this, "Selamat datang $email", Toast.LENGTH_SHORT).show()
+//                                    val intent = Intent(this, ContToProfileActivity::class.java)
+//                                    startActivity(intent)
+//                                    isLogin = true
+//                                    break
+//                                }
+//                            }
+//                            if (!isLogin) {
+//                                Toast.makeText(
+//                                    this,
+//                                    "Cannot login, incorrect Email and Password",
+//                                    Toast.LENGTH_SHORT
+//                                ).show()
+//                            }
+//                        }
+//                    }
+                loginFirebase(email, password)
             }
 
-//            loginFirebase(email, password)
+
         }
 
         setupView()
@@ -129,13 +133,38 @@ class LoginActivity : AppCompatActivity() {
 
     private fun loginFirebase(email: String, password: String) {
         auth.signInWithEmailAndPassword(email, password)
-            .addOnCompleteListener(this) {
-                if (it.isSuccessful) {
-                    Toast.makeText(this, "Selamat datang $email", Toast.LENGTH_SHORT).show()
-                    val intent = Intent(this, ContToProfileActivity::class.java)
-                    startActivity(intent)
-                }else{
-                    Toast.makeText(this, "${it.exception?.message}", Toast.LENGTH_SHORT).show()
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    val user = auth.currentUser
+                    val db = FirebaseFirestore.getInstance()
+                    val usersRef = db.collection("users")
+
+                    usersRef.whereEqualTo("email", user?.email)
+                        .get()
+                        .addOnSuccessListener { querySnapshot ->
+                            if (!querySnapshot.isEmpty) {
+                                val document = querySnapshot.documents[0]
+                                val name = document.getString("name")
+                                val phoneNumber = document.getString("phone_number")
+                                val gender = document.getString("gender")
+
+                                // Lakukan tindakan yang sesuai dengan data pengguna
+                                Toast.makeText(this, "Selamat datang $name", Toast.LENGTH_SHORT).show()
+                                val intent = Intent(this, ContToProfileActivity::class.java)
+                                intent.putExtra("name", name)
+                                startActivity(intent)
+                            } else {
+                                // Data pengguna tidak ditemukan di Firestore
+                                Log.d(TAG, "Data pengguna tidak ditemukan di Firestore")
+                            }
+                        }
+                        .addOnFailureListener { exception ->
+                            // Error saat mengambil data pengguna dari Firestore
+                            Log.e(TAG, "Error getting user data from Firestore", exception)
+                        }
+                } else {
+                    // Gagal melakukan login
+                    Toast.makeText(this, "${task.exception?.message}", Toast.LENGTH_SHORT).show()
                 }
             }
     }

@@ -38,7 +38,7 @@
             android:exported="false" />
         <activity
             android:name=".view.profile.LengkapiProfilActivity2"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".view.profile.CameraActivity"
             android:exported="false" />
