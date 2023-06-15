@@ -16,9 +16,7 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
 import com.example.rentakucapstone.R
-import com.example.rentakucapstone.ViewModelFactory
 import com.example.rentakucapstone.databinding.ActivityMainBinding
-import com.example.rentakucapstone.model.UserPreference
 import com.example.rentakucapstone.view.welcome.WelcomeActivity
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
@@ -57,20 +55,20 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupViewModel() {
-        mainViewModel = ViewModelProvider(
-            this,
-            ViewModelFactory(UserPreference.getInstance(dataStore))
-        )[MainViewModel::class.java]
-        Log.d("", "")
-
-        mainViewModel.getUser().observe(this, { user ->
-            if (user.isLogin){
-                binding.rentaku.text = getString(R.string.greeting, user.name)
-            } else {
-                startActivity(Intent(this, WelcomeActivity::class.java))
-                finish()
-            }
-        })
+//        mainViewModel = ViewModelProvider(
+//            this,
+//
+//        )[MainViewModel::class.java]
+//        Log.d("", "")
+//
+//        mainViewModel.getUser().observe(this, { user ->
+//            if (user.isLogin){
+//                binding.rentaku.text = getString(R.string.greeting, user.name)
+//            } else {
+//                startActivity(Intent(this, WelcomeActivity::class.java))
+//                finish()
+//            }
+//        })
     }
 
     /*

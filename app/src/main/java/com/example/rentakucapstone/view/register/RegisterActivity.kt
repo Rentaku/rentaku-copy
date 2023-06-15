@@ -91,7 +91,7 @@ class RegisterActivity : AppCompatActivity() {
                 )
 
                 if (userId != null) {
-                    db.collection("users").document(userId).set(userMap)
+                    db.collection("users").add(userMap)
                         .addOnSuccessListener {
                             Toast.makeText(this, "Akun berhasil dibuat!!!", Toast.LENGTH_SHORT).show()
                             binding.nameEditText.text?.clear()

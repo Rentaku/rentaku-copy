@@ -23,13 +23,29 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RentakuCapstone"
         tools:targetApi="31">
+        <activity
+            android:name=".kendaraan.TambahDetailKendaraanMobilActivity"
+            android:exported="false" />
+        <activity
+            android:name=".kendaraan.TambahDetailKendaraanActivity"
+            android:exported="true" />
+        <activity
+            android:name=".kendaraan.KendaraanRenterActivity"
+            android:exported="true" />
+        <activity
+            android:name=".kendaraan.TambahKendaraanActivity"
+            android:exported="true" />
+        <activity
+            android:name=".kendaraan.DetailKendaraanActivity"
+            android:exported="true" />
 
         <meta-data
             android:name="com.google.firebase.appcheck.provider"
             android:value="firebase" />
+
         <activity
             android:name=".dashboard.ui.home.DetailActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".view.profile.DataSavedActivity"
             android:exported="false" />
@@ -40,8 +56,11 @@
             android:name=".view.profile.LengkapiProfilActivity2"
             android:exported="true" />
         <activity
-            android:name=".view.profile.CameraActivity"
-            android:exported="false" />
+            android:name=".view.profile.ListKendaraanRenterActivity"
+            android:exported="true" />
+        <activity
+            android:name=".view.garasi.TambahGarasiActivity"
+            android:exported="true" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
