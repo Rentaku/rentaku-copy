@@ -35,6 +35,7 @@ import com.google.firebase.storage.FirebaseStorage
 import java.io.File
 import java.util.*
 
+@Suppress("DEPRECATION")
 class LengkapiProfilActivity2 : AppCompatActivity() {
 
     private lateinit var binding: ActivityLengkapiProfil2Binding
@@ -91,7 +92,8 @@ class LengkapiProfilActivity2 : AppCompatActivity() {
         binding.galleryButton3.setOnClickListener { startGallery(3) }
         binding.cameraButton4.setOnClickListener { startTakePhoto(4) }
         binding.galleryButton4.setOnClickListener { startGallery(4) }
-        binding.simpan.setOnClickListener { val file = selectedImageFile
+        binding.simpan.setOnClickListener {
+            val file = selectedImageFile
             val buttonIndex = currentButtonIndex
             if (file != null) {
                 uploadImage(file, buttonIndex)
@@ -151,12 +153,6 @@ class LengkapiProfilActivity2 : AppCompatActivity() {
                                         }
                                     }
 
-//                                val userMap = hashMapOf<String, Any>()
-//
-//                                for (buttonIndex in 0..4) {
-//                                    userMap["imageUrl$buttonIndex"] = imageUrl
-//                                }
-
                                     val docRef = FirebaseFirestore.getInstance().collection("users")
                                         .document(userId)
                                     docRef.set(userMap, SetOptions.merge())
@@ -166,6 +162,8 @@ class LengkapiProfilActivity2 : AppCompatActivity() {
                                                 "Gambar berhasil diunggah",
                                                 Toast.LENGTH_SHORT
                                             ).show()
+                                            val intent = Intent(this, DashboardActivity::class.java)
+                                            startActivity(intent)
                                         }
                                         .addOnFailureListener { exception ->
                                             Toast.makeText(

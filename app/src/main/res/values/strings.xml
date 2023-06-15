@@ -88,7 +88,7 @@
     <string name="nomor_sim">Nomor SIM</string>
     <string name="nomor_paspor">Nomor Paspor</string>
     <string name="agreement">melalui centang check box ini akan digunakan untuk memvalidasi data yang diberikan dan setuju terhadap ketentuan yang ada</string>
-    <string name="detail_kendaraan_title">Detail Kendaraan</string>
+    <string name="detail_kendaraan_title">Detail Kendaraan Motor</string>
     <string name="merk">Merk</string>
     <string name="model">Model</string>
     <string name="kategori">Kategori</string>
@@ -203,4 +203,14 @@
     <string name="time">12:10</string>
     <string name="price">Rp.250.000</string>
     <string name="pesan_lagi">Pesan Lagi</string>
+    <string name="hi">Hi, %s</string>
+    <string name="ubah_data_profil">Ubah data profil</string>
+    <string name="buka_garasi">Buka Garasi</string>
+    <string name="message">Message</string>
+    <string name="tambah_kendaraan">Tambah kendaraan</string>
+    <string name="jenis_kendaraan">Jenis Kendaraan</string>
+    <string name="detail_kendaraan_mobil">Detail Kendaraan Mobil</string>
+    <string name="besar_cc">Besar CC</string>
+    <string name="tahun">Tahun</string>
+    <string name="generate">Generate</string>
 </resources>
