@@ -14,10 +14,8 @@ import android.view.WindowInsets
 import android.view.WindowManager
 import android.widget.Toast
 import com.example.rentakucapstone.R
-import com.example.rentakucapstone.dashboard.DashboardActivity
 import com.example.rentakucapstone.databinding.ActivityLoginBinding
 import com.example.rentakucapstone.view.profile.ContToProfileActivity
-import com.example.rentakucapstone.view.profile.LengkapiProfilActivity
 import com.example.rentakucapstone.view.profile.LengkapiProfilActivity2
 import com.example.rentakucapstone.view.register.RegisterActivity
 import com.google.firebase.auth.FirebaseAuth
@@ -29,6 +27,7 @@ class LoginActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityLoginBinding
     lateinit var auth : FirebaseAuth
+    private var db = Firebase.firestore
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
@@ -58,6 +57,33 @@ class LoginActivity : AppCompatActivity() {
                 binding.passwordEditText.requestFocus()
                 return@setOnClickListener
             } else {
+//                db.collection("users")
+//                    .get()
+//                    .addOnCompleteListener { task ->
+//                        if (task.isSuccessful) {
+//                            val sEmail = email
+//                            val sPassword = password
+//                            var isLogin = false
+//                            for (doc in task.result) {
+//                                val a = doc.getString("email")
+//                                val b = doc.getString("password")
+//                                if (a.equals(sEmail, ignoreCase = true) && b.equals(sPassword, ignoreCase = true)) {
+//                                    Toast.makeText(this, "Selamat datang $email", Toast.LENGTH_SHORT).show()
+//                                    val intent = Intent(this, ContToProfileActivity::class.java)
+//                                    startActivity(intent)
+//                                    isLogin = true
+//                                    break
+//                                }
+//                            }
+//                            if (!isLogin) {
+//                                Toast.makeText(
+//                                    this,
+//                                    "Cannot login, incorrect Email and Password",
+//                                    Toast.LENGTH_SHORT
+//                                ).show()
+//                            }
+//                        }
+//                    }
                 loginFirebase(email, password)
             }
 
@@ -119,27 +145,14 @@ class LoginActivity : AppCompatActivity() {
                             if (!querySnapshot.isEmpty) {
                                 val document = querySnapshot.documents[0]
                                 val name = document.getString("name")
-                                val alamat = document.getString("alamat")
-                                val tgLahir = document.getString("nomor_telepon_darurat")
-                                val noTelp = document.getString("tgl_lahir")
-                                val noKtp = document.getString("no_ktp")
-                                val noSim = document.getString("no_sim")
-                                val noPaspor = document.getString("no_paspor")
-
-                                if (alamat != null && tgLahir != null && noTelp != null && noKtp != null && noSim != null && noPaspor != null) {
-                                    Toast.makeText(this, "Selamat datang $name", Toast.LENGTH_SHORT).show()
-                                    val intent = Intent(this, DashboardActivity::class.java)
-                                    intent.putExtra("name", name)
-                                    startActivity(intent)
-                                } else {
-                                    Toast.makeText(this, "Lengkapi profil dulu ya, $name", Toast.LENGTH_SHORT).show()
-                                    val intent = Intent(this, LengkapiProfilActivity::class.java)
-                                    intent.putExtra("name", name)
-                                    startActivity(intent)
-                                }
+                                val phoneNumber = document.getString("phone_number")
+                                val gender = document.getString("gender")
 
                                 // Lakukan tindakan yang sesuai dengan data pengguna
-
+                                Toast.makeText(this, "Selamat datang $name", Toast.LENGTH_SHORT).show()
+                                val intent = Intent(this, ContToProfileActivity::class.java)
+                                intent.putExtra("name", name)
+                                startActivity(intent)
                             } else {
                                 // Data pengguna tidak ditemukan di Firestore
                                 Log.d(TAG, "Data pengguna tidak ditemukan di Firestore")
@@ -156,5 +169,10 @@ class LoginActivity : AppCompatActivity() {
             }
     }
 
-
+//    fun onNextClick(view: View) {
+//        binding.textBtnResgistrasi.setOnClickListener {
+//            startActivity(Intent(this, RegisterActivity::class.java))
+//            Toast.makeText(this, "Daftarin akun dulu yaa..", Toast.LENGTH_SHORT).show()
+//        }
+//    }
 }

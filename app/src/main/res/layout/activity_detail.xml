@@ -174,23 +174,18 @@
             app:layout_constraintTop_toBottomOf="@+id/rateTextView"
             app:layout_constraintTop_toTopOf="@+id/rateTextView" />
 
-            <Button
-                android:id="@+id/lihatUlasan"
-                android:layout_width="0dp"
-                android:layout_height="64dp"
-                android:layout_marginStart="16dp"
+            <TextView
+                android:id="@+id/tvUlasan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_marginEnd="32dp"
-                android:backgroundTint="@color/white"
-                android:fontFamily="@font/poppinsregular"
+                android:fontFamily="@font/poppinssemibold"
                 android:text="@string/lihat_ulasan"
                 android:textColor="@color/blue"
-                android:textSize="18sp"
+                android:textSize="17sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/renterBy"
-                app:strokeColor="@color/blue"
-                app:strokeWidth="2dp" />
+                app:layout_constraintTop_toBottomOf="@+id/renterBy" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
