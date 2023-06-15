@@ -24,25 +24,37 @@
         android:theme="@style/Theme.RentakuCapstone"
         tools:targetApi="31">
         <activity
-            android:name=".view.profile.DetailPesananActivity"
+            android:name=".Pembayaran2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Pembayaran1Activity"
+            android:exported="false" />
+        <activity
+            android:name=".KonfirmasiPesananActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DurasiSewaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".kendaraan.TambahDetailKendaraanMobilActivity"
             android:exported="true" />
         <activity
-            android:name=".view.profile.KonfirmasiPesananActivity"
+            android:name=".kendaraan.TambahDetailKendaraanActivity"
             android:exported="true" />
         <activity
-            android:name=".view.profile.Pembayaran_Activity"
+            android:name=".kendaraan.KendaraanRenterActivity"
             android:exported="true" />
         <activity
-            android:name=".dashboard.ui.setLokasi.DurasiSewaActivity"
+            android:name=".kendaraan.TambahKendaraanActivity"
+            android:exported="true" />
+        <activity
+            android:name=".kendaraan.DetailKendaraanActivity"
             android:exported="true" />
 
         <meta-data
             android:name="com.google.firebase.appcheck.provider"
             android:value="firebase" />
 
-        <activity
-            android:name=".view.profile.PembayaranActivity"
-            android:exported="true" />
         <activity
             android:name=".dashboard.ui.home.DetailActivity"
             android:exported="true" />
@@ -56,8 +68,11 @@
             android:name=".view.profile.LengkapiProfilActivity2"
             android:exported="true" />
         <activity
-            android:name=".view.profile.CameraActivity"
-            android:exported="false" />
+            android:name=".view.profile.ListKendaraanRenterActivity"
+            android:exported="true" />
+        <activity
+            android:name=".view.garasi.TambahGarasiActivity"
+            android:exported="true" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -80,7 +95,7 @@
             android:exported="true" />
         <activity
             android:name=".dashboard.DashboardActivity"
-            android:exported="false"
+            android:exported="true"
             android:label="@string/title_activity_dashboard" />
         <activity
             android:name=".view.welcome.BuatPasswordActivity"

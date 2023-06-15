@@ -2,11 +2,9 @@ package com.example.rentakucapstone.dashboard.ui.setLokasi
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.rentakucapstone.R
 import com.example.rentakucapstone.databinding.ActivityDurasiSewaBinding
 
 class DurasiSewaActivity : AppCompatActivity() {
-
     private lateinit var binding: ActivityDurasiSewaBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {

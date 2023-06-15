@@ -59,11 +59,5 @@ class PesananFragment : Fragment() {
 //        //val textView: TextView = binding.textDashboard
 //        pesananViewModel.text.observe(viewLifecycleOwner) {
 //            //textView.text = it
-        }
     }
-
-//    override fun onDestroyView() {
-//        super.onDestroyView()
-//        _binding = null
-//    }
-//}
+}
