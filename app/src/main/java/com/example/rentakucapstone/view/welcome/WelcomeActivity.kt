@@ -15,11 +15,7 @@ import com.example.rentakucapstone.databinding.ActivityWelcomeBinding
 
 import com.example.rentakucapstone.view.login.LoginActivity
 import com.example.rentakucapstone.view.register.RegisterActivity
-import com.example.rentakucapstone.view.signup.SignupActivity
-import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.auth.api.signin.GoogleSignInClient
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions
-import com.google.android.material.button.MaterialButton
+
 
 class WelcomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityWelcomeBinding

@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.navigation.findNavController
 import com.example.rentakucapstone.R
 import com.example.rentakucapstone.databinding.FragmentAccountBinding
+import com.example.rentakucapstone.kendaraan.TambahKendaraanActivity
 import com.example.rentakucapstone.view.garasi.TambahGarasiActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -69,6 +70,11 @@ class AccountFragment : Fragment() {
 
         binding.bukaGarasiBtn.setOnClickListener {
             val intent = Intent(requireContext(), TambahGarasiActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.tambahKendaraanBtn.setOnClickListener {
+            val intent = Intent(requireContext(), TambahKendaraanActivity::class.java)
             startActivity(intent)
         }
 

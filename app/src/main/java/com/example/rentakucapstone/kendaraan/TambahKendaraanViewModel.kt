@@ -1,4 +1,4 @@
-package com.example.rentakucapstone.view.garasi
+package com.example.rentakucapstone.kendaraan
 
 import android.net.Uri
 import androidx.lifecycle.ViewModel
@@ -11,13 +11,14 @@ import java.io.File
 import java.util.*
 import kotlin.collections.HashMap
 
-class TambahGarasiViewModel : ViewModel() {
+class TambahKendaraanViewModel : ViewModel() {
+
     private val firestore = FirebaseFirestore.getInstance()
     private val storageRef = FirebaseStorage.getInstance().reference
 
-    fun saveDataGarasi(userId: String, dataGarasi: HashMap<String, Any>, file: File): Task<DocumentReference> {
+    fun saveDataMotor(userId: String, dataMotor: HashMap<String, Any>, file: File): Task<DocumentReference> {
 
-        val folderName = "garage_img"
+        val folderName = "vehicle_img"
         val imageRef = storageRef.child("$folderName/${UUID.randomUUID()}")
         val uploadTask = imageRef.putFile(Uri.fromFile(file))
 
@@ -29,11 +30,11 @@ class TambahGarasiViewModel : ViewModel() {
         }.continueWithTask { task ->
             if (task.isSuccessful) {
                 val imageUrl = task.result.toString()
-                dataGarasi["imageUrl"] = imageUrl
+                dataMotor["imageUrl"] = imageUrl
             } else {
                 throw task.exception!!
             }
-            firestore.collection("partners").add(dataGarasi)
+            firestore.collection("vehicles").add(dataMotor)
         }
     }
 
@@ -43,5 +44,4 @@ class TambahGarasiViewModel : ViewModel() {
             .limit(1)
             .get()
     }
-
 }

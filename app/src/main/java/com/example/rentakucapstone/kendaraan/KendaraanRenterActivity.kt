@@ -27,7 +27,7 @@ class KendaraanRenterActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_message -> {
-                // Tindakan saat item "Search" dipilih
+                // Tindakan saat item "Message" dipilih
                 true
             }
             R.id.action_tambahKendaraan -> {

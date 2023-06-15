@@ -6,5 +6,6 @@ enum class BesarCcMotor(val value: String) {
     CC111("111 cc"),
     CC113("113 cc"),
     CC115("115 cc"),
-    CC120("120cc"),
+    CC120("120 cc"),
+    CC160("160 cc"),
 }

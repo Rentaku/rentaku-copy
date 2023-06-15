@@ -18,7 +18,7 @@ class PesananFragment : Fragment() {
 
     private var _binding: FragmentPesananBinding? = null
     private lateinit var pesananAdapter: PesananAdapter
-    private val pesananNames = listOf("Senayan Park", "Senayan Park", "Senayan Park", "Senayan Park", "Senayan Park")
+    private val pesananNames = listOf("Kawasaki ZX250R", "Kawasaki ZX250R", "Kawasaki ZX250R")
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -54,16 +54,10 @@ class PesananFragment : Fragment() {
         binding.rvPesanan.layoutManager = verticalLayoutPesanan
         binding.rvPesanan.layoutManager
 
-        val pesananViewModel = ViewModelProvider(this).get(PesananViewModel::class.java)
-
-        //val textView: TextView = binding.textDashboard
-        pesananViewModel.text.observe(viewLifecycleOwner) {
-            //textView.text = it
-        }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+//        val pesananViewModel = ViewModelProvider(this).get(PesananViewModel::class.java)
+//
+//        //val textView: TextView = binding.textDashboard
+//        pesananViewModel.text.observe(viewLifecycleOwner) {
+//            //textView.text = it
     }
 }

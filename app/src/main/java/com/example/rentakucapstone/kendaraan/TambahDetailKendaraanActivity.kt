@@ -2,17 +2,25 @@ package com.example.rentakucapstone.kendaraan
 
 import android.annotation.SuppressLint
 import android.content.ContentValues.TAG
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.example.rentakucapstone.R
 import com.example.rentakucapstone.dataKendaraan.*
 import com.example.rentakucapstone.databinding.ActivityTambahDetailKendaraanBinding
 import com.example.rentakucapstone.pricePrediction.PredictionViewModel
+import com.example.rentakucapstone.view.profile.LengkapiProfilActivity2
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.SetOptions
 import java.text.DecimalFormat
+import java.text.SimpleDateFormat
+import java.util.*
 
 class TambahDetailKendaraanActivity : AppCompatActivity() {
 
@@ -25,6 +33,7 @@ class TambahDetailKendaraanActivity : AppCompatActivity() {
     private lateinit var tahun: AutoCompleteTextView
     private lateinit var adapter: ArrayAdapter<String>
 
+
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +41,7 @@ class TambahDetailKendaraanActivity : AppCompatActivity() {
 
         binding = ActivityTambahDetailKendaraanBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
 
         supportActionBar?.hide()
 
@@ -64,7 +74,88 @@ class TambahDetailKendaraanActivity : AppCompatActivity() {
 
         setupAction()
         generatePrediction()
+        save()
     }
+
+    private fun save() {
+
+        val auth = FirebaseAuth.getInstance()
+        val currentUser  = auth.currentUser
+        val email = currentUser?.email
+
+        binding.simpanButton.setOnClickListener {
+            if (email != null) {
+                val query = FirebaseFirestore.getInstance().collection("users")
+                    .whereEqualTo("email", email)
+                    .limit(1)
+
+                query.get()
+                    .addOnSuccessListener { doc ->
+                        if (!doc.isEmpty) {
+                            val documentSnapshot = doc.documents[0]
+                            val userIdFromDocument = documentSnapshot.getString("userId")
+
+                            val userId = currentUser.uid
+
+                            if (userIdFromDocument == userId) {
+                                val mileage1 = binding.mileageEditText.text.toString()
+                                val harga1 = binding.hargaEditText.text.toString()
+                                val merkMotor1 = MerkMotor.values().find { it.value == merk.text.toString() }
+                                val modelMotor1 = ModelMotor.values().find { it.value == model.text.toString() }
+                                val besarCcMotor1 = BesarCcMotor.values().find { it.value == besarCC.text.toString() }
+                                val tipeTransmisiMotor1 = TipeTransmisi.values().find { it.value == tipeTransmisi.text.toString() }
+                                val tahunMotor1 = TahunMotor.values().find { it.value == tahun.text.toString() }
+
+                                val warna = binding.warnaEditText.text.toString()
+
+                                val userMap = hashMapOf(
+                                    "merk_motor" to merkMotor1,
+                                    "model_motor" to modelMotor1,
+                                    "besar_cc" to besarCcMotor1,
+                                    "mileage" to mileage1,
+                                    "tipe_transmisi" to tipeTransmisiMotor1,
+                                    "tahun" to tahunMotor1,
+                                    "warna" to warna,
+                                    "harga" to harga1
+                                )
+
+                                val docRef = FirebaseFirestore.getInstance().collection("vehicles").document(userId)
+
+                                docRef.set(userMap, SetOptions.merge())
+                                    .addOnSuccessListener {
+                                        Toast.makeText(this, "Detail data berhasil ditambahkan >.<", Toast.LENGTH_SHORT).show()
+                                        binding.mileageEditText.text?.clear()
+                                        binding.merk
+                                        binding.model
+                                        binding.besarCc
+                                        binding.tipeTransmisi
+                                        binding.tahun
+                                        binding.warnaEditText.text?.clear()
+                                        binding.hargaEditText.text?.clear()
+
+                                        val intent = Intent(this, KendaraanRenterActivity::class.java)
+                                        startActivity(intent)
+                                    }
+                                    .addOnFailureListener {
+                                        Toast.makeText(this, "Akun gagal dibuat! -_-''", Toast.LENGTH_SHORT).show()
+                                    }
+                            } else {
+                                Log.d(TAG, "UserId tidak cocok")
+                            }
+
+
+                        } else {
+                            Log.d(TAG,"Email gaada yang cocok")
+                        }
+                    }
+                    .addOnFailureListener { exception ->
+                        Toast.makeText(this, "Gagal mendapatkan detail data pengguna", Toast.LENGTH_SHORT).show()
+                        Log.e(TAG, "Error getting document", exception)
+                    }
+            }
+        }
+    }
+
 
     @SuppressLint("SuspiciousIndentation")
     private fun generatePrediction() {
@@ -105,8 +196,8 @@ class TambahDetailKendaraanActivity : AppCompatActivity() {
             val merkMotor = MerkMotor.values().find { it.value == merk.text.toString() }
             val modelMotor = ModelMotor.values().find { it.value == model.text.toString() }
             val besarCcMotor = BesarCcMotor.values().find { it.value == besarCC.text.toString() }
-            val tipeTransmisiMotor = TipeTransmisi.values().find { it.value == tipeTransmisi.text.toString() }
             val tahunMotor = TahunMotor.values().find { it.value == tahun.text.toString() }
+
 
             if (merkMotor != null && modelMotor != null && besarCcMotor != null && tahunMotor != null) {
                 val motorData = MotorData(mileage, merkMotor, modelMotor, tahunMotor, besarCcMotor)

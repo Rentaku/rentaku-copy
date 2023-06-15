@@ -18,7 +18,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Foto 1"
+                android:text="Foto Kendaraan"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"/>
 
@@ -56,86 +56,86 @@
             </LinearLayout>
 
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Foto 2"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"/>
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Foto 2"-->
+<!--                android:layout_marginStart="16dp"-->
+<!--                android:layout_marginTop="16dp"/>-->
 
-            <ImageView
-                android:id="@+id/previewImageView1"
-                android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:layout_margin="8dp"
-                android:src="@drawable/ic_place_holder" />
+<!--            <ImageView-->
+<!--                android:id="@+id/previewImageView1"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="250dp"-->
+<!--                android:layout_margin="8dp"-->
+<!--                android:src="@drawable/ic_place_holder" />-->
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="horizontal">-->
 
-                <Button
-                    android:id="@+id/cameraButton1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/button_shape"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="8dp"
-                    android:text="@string/camera"/>
+<!--                <Button-->
+<!--                    android:id="@+id/cameraButton1"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:background="@drawable/button_shape"-->
+<!--                    android:layout_marginStart="16dp"-->
+<!--                    android:layout_marginEnd="8dp"-->
+<!--                    android:text="@string/camera"/>-->
 
-                <Button
-                    android:id="@+id/galleryButton1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/button_shape"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="16dp"
-                    android:text="@string/gallery"/>
-            </LinearLayout>
+<!--                <Button-->
+<!--                    android:id="@+id/galleryButton1"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:background="@drawable/button_shape"-->
+<!--                    android:layout_marginStart="8dp"-->
+<!--                    android:layout_marginEnd="16dp"-->
+<!--                    android:text="@string/gallery"/>-->
+<!--            </LinearLayout>-->
 
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Foto 3"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"/>
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Foto 3"-->
+<!--                android:layout_marginStart="16dp"-->
+<!--                android:layout_marginTop="16dp"/>-->
 
-            <ImageView
-                android:id="@+id/previewImageView2"
-                android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:layout_margin="8dp"
-                android:src="@drawable/ic_place_holder" />
+<!--            <ImageView-->
+<!--                android:id="@+id/previewImageView2"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="250dp"-->
+<!--                android:layout_margin="8dp"-->
+<!--                android:src="@drawable/ic_place_holder" />-->
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="horizontal">-->
 
-                <Button
-                    android:id="@+id/cameraButton2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/button_shape"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="8dp"
-                    android:text="@string/camera"/>
+<!--                <Button-->
+<!--                    android:id="@+id/cameraButton2"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:background="@drawable/button_shape"-->
+<!--                    android:layout_marginStart="16dp"-->
+<!--                    android:layout_marginEnd="8dp"-->
+<!--                    android:text="@string/camera"/>-->
 
-                <Button
-                    android:id="@+id/galleryButton2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/button_shape"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="16dp"
-                    android:text="@string/gallery"/>
-            </LinearLayout>
+<!--                <Button-->
+<!--                    android:id="@+id/galleryButton2"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:background="@drawable/button_shape"-->
+<!--                    android:layout_marginStart="8dp"-->
+<!--                    android:layout_marginEnd="16dp"-->
+<!--                    android:text="@string/gallery"/>-->
+<!--            </LinearLayout>-->
 
             <TextView
                 android:id="@+id/jenisKendaraanTextView"
