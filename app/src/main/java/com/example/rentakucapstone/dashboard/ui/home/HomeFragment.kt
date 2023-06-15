@@ -7,15 +7,12 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.rentakucapstone.R
 import com.example.rentakucapstone.databinding.FragmentHomeBinding
-import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
-@Suppress("DEPRECATION")
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
@@ -27,36 +24,6 @@ class HomeFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-//        val bottomNavigationView = requireActivity().findViewById<BottomNavigationView>(R.id.nav_view)
-//        val navController = requireActivity().findNavController(R.id.nav_host_fragment_activity_dashboard)
-//
-//        bottomNavigationView.setOnNavigationItemSelectedListener { menuItem ->
-//            when (menuItem.itemId) {
-//                R.id.navigation_home -> {
-//                    true
-//                }
-//                R.id.navigation_favourite -> {
-//                    navController.navigate(R.id.navigation_favourite)
-//                    navController.popBackStack(R.id.navigation_account, false)
-//                    true
-//                }
-//                R.id.navigation_pesanan -> {
-//                    navController.navigate(R.id.navigation_pesanan)
-//                    true
-//                }
-//                R.id.navigation_account -> {
-//                    navController.navigate(R.id.navigation_account)
-//                    true
-//                }
-//                else -> false
-//            }
-//        }
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater,

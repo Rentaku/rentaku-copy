@@ -13,7 +13,7 @@ class DisekitarAdapter(
     RecyclerView.Adapter<DisekitarAdapter.MyViewHolder>() {
 
     class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val tvDisekitar: TextView = itemView.findViewById(R.id.tvDisekitar)
+        val tvDisekitar: TextView = view.findViewById(R.id.tvDisekitar)
     }
 
     override fun onCreateViewHolder(

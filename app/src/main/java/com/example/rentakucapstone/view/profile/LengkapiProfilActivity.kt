@@ -20,6 +20,7 @@ import java.util.*
 
 class LengkapiProfilActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLengkapiProfilBinding
+    private var db = Firebase.firestore
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
