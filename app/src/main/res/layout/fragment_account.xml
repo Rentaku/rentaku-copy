@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".dashboard.ui.account.AccountFragment">
 
+    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:id="@+id/text_account"
         android:layout_width="match_parent"
@@ -13,61 +14,11 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:text="@string/profil"
+        android:text="@string/account"
         android:textAlignment="center"
-        android:textStyle="bold"
-        android:textSize="23sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:scaleType="centerCrop"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
-        android:src="@drawable/baseline_account_circle_24"
-        app:layout_constraintTop_toBottomOf="@id/text_account"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <TextView
-        android:id="@+id/greeting"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/hi"
-        android:textAlignment="center"
-        android:textStyle="bold"
-        android:textSize="23sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/profile_image" />
-
-    <Button
-        android:id="@+id/editProfil_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button_shape"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="45dp"
-        android:text="@string/ubah_data_profil"
-        app:layout_constraintTop_toBottomOf="@id/greeting"/>
-
-    <Button
-        android:id="@+id/bukaGarasi_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button_shape"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="25dp"
-        android:text="@string/buka_garasi"
-        app:layout_constraintTop_toBottomOf="@id/editProfil_btn"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

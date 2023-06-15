@@ -13,7 +13,7 @@ class RekomendasiAdapter(
     RecyclerView.Adapter<RekomendasiAdapter.MyViewHolder>() {
 
     class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val tvRekomendasi: TextView = itemView.findViewById(R.id.tvRekomendasi)
+        val tvRekomendasi: TextView = view.findViewById(R.id.tvRekomendasi)
     }
 
     override fun onCreateViewHolder(
