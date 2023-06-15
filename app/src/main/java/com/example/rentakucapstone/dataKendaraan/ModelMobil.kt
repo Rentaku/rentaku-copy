@@ -1,9 +1,30 @@
 package com.example.rentakucapstone.dataKendaraan
 
 enum class ModelMobil(val value: String) {
-    CLK_220("clk 220"),
+    ALPHARD("Alphard"),
     CAMARO_RS("camaro rs"),
+    CAMRY_HYBRID_XLE("Camry Hybrid XLE"),
+    CIVIC_HYBRID_L("Civic Hybrid L"),
     CIVIC_LX("civic lx"),
+    CLK_220("clk 220"),
+    COMPASS("Compass"),
     COROLLA("corolla"),
+    CROSSFIRE("Crossfire"),
+    DELICA_4X4("Delica 4x4"),
+    ECOSPORT("EcoSport"),
+    ELANTRA_LIMITED("Elantra limited"),
+    ESCAPE_TITAN("Escape TITAN"),
     FORTE("forte"),
+    FORESTER_LIMITED("Forester LIMITED"),
+    FORESTER_XT("Forester XT"),
+    FUSION_ECOBOOST("Fusion Ecoboost"),
+    FUSION_TITANIUM("Fusion titanium"),
+    GRAND_HIACE("Grand HIACE"),
+    JUKE("Juke"),
+    KANGOO_WAGGON("Kangoo Waggon"),
+    LAND_CRUISER("Land Cruiser"),
+    MAZDA_5("Mazda 5"),
+    MUSTANG("Mustang"),
+    OUTLANDER("Outlander"),
+    TAURUS("Taurus")
 }
