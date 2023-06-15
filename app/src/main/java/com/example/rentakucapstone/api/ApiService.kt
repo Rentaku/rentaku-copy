@@ -1,13 +1,8 @@
 package com.example.rentakucapstone.api
 
 import com.example.rentakucapstone.BuildConfig
-import com.example.rentakucapstone.dataKendaraan.BesarCcMotor
-import com.example.rentakucapstone.dataKendaraan.MerkMotor
-import com.example.rentakucapstone.dataKendaraan.ModelMotor
-import com.example.rentakucapstone.dataKendaraan.TahunMotor
 import com.google.gson.JsonObject
 import okhttp3.OkHttpClient
-import okhttp3.RequestBody
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Call
 import retrofit2.Retrofit
